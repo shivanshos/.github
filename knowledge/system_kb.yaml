@@ -1,5 +1,5 @@
 # ShivanshOS System Knowledge Base Index
-version: "1.0"
+version: "1.1"
 domain: "shivanshsethi.in"
 
 identities:
@@ -21,7 +21,12 @@ compute_infrastructure:
 
 subdomains_and_services:
   - subdomain: "os.shivanshsethi.in"
-    description: "Main Landing Portal, Portfolio, and Agent Chatbot Interface"
+    description: "Main Landing Portal, Hybrid Studio, Case-Study Research, Blog/Substack Feed, Link-Tree, and Agent Dashboard"
+    modules:
+      - "os/index.html (Resource Integrator, Link-Tree, Agent Dashboard, Badge Showcase)"
+      - "os/studio.html (Studio Project Showcase & Active Products)"
+      - "os/research.html (Research Papers & Technical Case Studies)"
+      - "os/blog.html (Personal Blog, Substack Feed & Medium Mirrors)"
   - subdomain: "git.shivanshsethi.in"
     description: "Gitea Self-Hosted Git Repository"
   - subdomain: "vault.shivanshsethi.in"
