@@ -1,0 +1,56 @@
+# Auth0 Developer Platform Configuration
+# Admin account: dev@shivanshsethi.in
+version: "1.0"
+tenant: "shivanshos-dev.auth0.com"
+primary_owner: "dev@shivanshsethi.in"
+
+branding:
+  logo_url: "https://avatars.shivanshsethi.in/logo.png"
+  colors:
+    primary: "#0d9488" # Teal
+    page_background: "#0f172a"
+
+applications:
+  - name: "ShivanshOS Portal Web App"
+    type: "regular_web"
+    domain: "os.shivanshsethi.in"
+    callbacks:
+      - "https://os.shivanshsethi.in/api/auth/callback"
+      - "https://login.shivanshsethi.in/callback"
+    allowed_logout_urls:
+      - "https://os.shivanshsethi.in"
+
+  - name: "ShivanshOS Agentic MCP Service"
+    type: "non_interactive"
+    client_credentials:
+      audience: "https://api.shivanshsethi.in"
+    scopes:
+      - "read:identity"
+      - "write:directory_sync"
+      - "read:vault_tokens"
+
+enterprise_connections:
+  - name: "Google-Cloud-Identity-SAML"
+    strategy: "samlp"
+    options:
+      sign_in_endpoint: "https://accounts.google.com/o/saml2/idp?idpid=shivanshsethi"
+      protocol: "saml2"
+      user_attribute_mapping:
+        email: "email"
+        name: "name"
+        given_name: "given_name"
+        family_name: "family_name"
+    enabled_clients:
+      - "ShivanshOS Portal Web App"
+
+rules_and_actions:
+  - name: "Assign OUs and Persona Roles"
+    trigger: "post-login"
+    script: |
+      exports.onExecutePostLogin = async (event, api) => {
+        const email = event.user.email;
+        if (email.endsWith('@shivanshsethi.in')) {
+          api.idToken.setCustomClaim('https://shivanshsethi.in/persona', email.split('@')[0]);
+          api.accessToken.setCustomClaim('https://shivanshsethi.in/domain', 'shivanshsethi.in');
+        }
+      };

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShivanshOS — Personal System & Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #090d16;
+      color: #e2e8f0;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 sm:p-8">
+
+  <!-- ShivanshOS Top Masthead -->
+  <header class="w-full max-w-4xl text-center py-6 border-b border-slate-800 mb-8">
+    <div class="inline-flex items-center gap-2 font-mono text-xl sm:text-2xl font-bold tracking-wider">
+      <span class="text-white">SHIVANSH</span><span class="text-teal-400">OS</span>
+    </div>
+    <div class="font-mono text-xs text-slate-400 mt-1 tracking-widest uppercase">
+      / personal system
+    </div>
+  </header>
+
+  <main class="w-full max-w-4xl space-y-8">
+
+    <!-- User / System Identity Header -->
+    <section class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 shadow-xl backdrop-blur">
+      <div class="flex flex-col sm:flex-row items-center gap-6">
+        <div class="relative">
+          <img src="https://avatars.shivanshsethi.in/logo.png" alt="Shivansh Sethi" class="w-24 h-24 rounded-full border-2 border-teal-500/50 bg-slate-800 object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Shivansh+Sethi&background=0d9488&color=fff'">
+          <span class="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-slate-900 rounded-full" title="System Active"></span>
+        </div>
+        <div class="text-center sm:text-left space-y-2">
+          <h1 class="text-2xl font-bold text-white">Shivansh Sethi</h1>
+          <p class="text-slate-400 text-sm">Universal Canonical Identity: <code class="text-teal-300 font-mono">shivanshsethi.in</code></p>
+          <div class="flex flex-wrap gap-2 justify-center sm:justify-start pt-1">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-teal-500/10 text-teal-400 border border-teal-500/20">admin: x@shivanshsethi.in</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20">dev: dev@shivanshsethi.in</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20">agent: agent@shivanshsethi.in</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [AGENT] Module - AI Chatbot Row -->
+    <section class="bg-gradient-to-r from-purple-900/30 via-slate-900 to-slate-900 border border-purple-500/30 rounded-xl p-6 shadow-xl relative overflow-hidden">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-500 text-slate-950 uppercase">[AGENT]</span>
+              <h2 class="text-lg font-semibold text-white">Chat with ShivanshOS</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-1">AI agent tuned on projects, tech stack, research, and availability.</p>
+          </div>
+        </div>
+        <a href="#chatbot" id="chatbot-trigger" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-medium text-sm text-center transition flex items-center justify-center gap-2">
+          <span>Launch Agent</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- Chatbot Interactive Drawer Container -->
+      <div id="chatbot-box" class="hidden mt-6 pt-6 border-t border-purple-500/20 space-y-4">
+        <div id="chat-messages" class="bg-slate-950/80 rounded-lg p-4 h-48 overflow-y-auto font-mono text-xs space-y-3 border border-slate-800">
+          <div class="text-purple-400">
+            <span class="font-bold">[Agent]:</span> Hello! I am the ShivanshOS Assistant. I have knowledge of Shivansh's stack, projects, and identity setup. How can I help you today?
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <input type="text" id="chat-input" placeholder="Ask about projects, stack, or availability..." class="flex-1 bg-slate-950 border border-slate-800 rounded-lg px-4 py-2 text-xs text-white focus:outline-none focus:border-purple-500">
+          <button id="send-btn" class="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg text-xs font-semibold">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Indexed Profiles, Badges & Skills -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Developer Profiles & Badges -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 space-y-4">
+        <h3 class="text-md font-semibold text-white flex items-center gap-2">
+          <i class="fa-solid fa-id-badge text-teal-400"></i>
+          <span>Developer Profiles & Badges</span>
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/50 border border-slate-800/80">
+            <span class="flex items-center gap-2 text-slate-300">
+              <i class="fa-brands fa-google text-red-400"></i> Google Developer Profile
+            </span>
+            <a href="https://g.dev/shivanshsethi" target="_blank" class="text-xs font-mono text-teal-400 hover:underline">g.dev/shivanshsethi &rarr;</a>
+          </li>
+          <li class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/50 border border-slate-800/80">
+            <span class="flex items-center gap-2 text-slate-300">
+              <i class="fa-brands fa-aws text-amber-400"></i> AWS Community / Builder
+            </span>
+            <span class="text-xs font-mono text-slate-400">Verified Builder</span>
+          </li>
+          <li class="flex items-center justify-between p-2.5 rounded-lg bg-slate-950/50 border border-slate-800/80">
+            <span class="flex items-center gap-2 text-slate-300">
+              <i class="fa-brands fa-github text-white"></i> GitHub Enterprise / OSS
+            </span>
+            <a href="https://git.shivanshsethi.in" target="_blank" class="text-xs font-mono text-teal-400 hover:underline">git.shivanshsethi.in &rarr;</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Skills & Core Stack -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 space-y-4">
+        <h3 class="text-md font-semibold text-white flex items-center gap-2">
+          <i class="fa-solid fa-code text-teal-400"></i>
+          <span>Core Stack & Capabilities</span>
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-lg text-xs bg-slate-800 border border-slate-700 text-slate-200">Cloudflare Zero Trust / Tunnels</span>
+          <span class="px-3 py-1 rounded-lg text-xs bg-slate-800 border border-slate-700 text-slate-200">Auth0 & Authentik SSO</span>
+          <span class="px-3 py-1 rounded-lg text-xs bg-slate-800 border border-slate-700 text-slate-200">Model Context Protocol (MCP)</span>
+          <span class="px-3 py-1 rounded-lg text-xs bg-slate-800 border border-slate-700 text-slate-200">Google Cloud Identity</span>
+          <span class="px-3 py-1 rounded-lg text-xs bg-slate-800 border border-slate-700 text-slate-200">Vaultwarden / Passkeys</span>
+          <span class="px-3 py-1 rounded-lg text-xs bg-slate-800 border border-slate-700 text-slate-200">Ubuntu HPC Cluster / Slurm</span>
+          <span class="px-3 py-1 rounded-lg text-xs bg-slate-800 border border-slate-700 text-slate-200">AI Agents & Workflows</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Research, Project Showcase & Research Links -->
+    <section class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 space-y-4">
+      <h3 class="text-md font-semibold text-white flex items-center gap-2">
+        <i class="fa-solid fa-diagram-project text-teal-400"></i>
+        <span>Project Showcase & Research</span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="https://docs.shivanshsethi.in" target="_blank" class="p-4 rounded-lg bg-slate-950/60 border border-slate-800 hover:border-teal-500/50 transition group">
+          <div class="text-xs font-mono text-teal-400 mb-1">docs.shivanshsethi.in</div>
+          <div class="text-sm font-semibold text-white group-hover:text-teal-300">System Documentation</div>
+          <div class="text-xs text-slate-400 mt-2">Architecture specs and system references (Mintlify).</div>
+        </a>
+        <a href="https://dev.shivanshsethi.in" target="_blank" class="p-4 rounded-lg bg-slate-950/60 border border-slate-800 hover:border-teal-500/50 transition group">
+          <div class="text-xs font-mono text-teal-400 mb-1">dev.shivanshsethi.in</div>
+          <div class="text-sm font-semibold text-white group-hover:text-teal-300">Developer Portal</div>
+          <div class="text-xs text-slate-400 mt-2">Sandbox environments and agent orchestration specs.</div>
+        </a>
+        <a href="https://hpc.shivanshsethi.in" target="_blank" class="p-4 rounded-lg bg-slate-950/60 border border-slate-800 hover:border-teal-500/50 transition group">
+          <div class="text-xs font-mono text-teal-400 mb-1">hpc.shivanshsethi.in</div>
+          <div class="text-sm font-semibold text-white group-hover:text-teal-300">HPC Compute Cluster</div>
+          <div class="text-xs text-slate-400 mt-2">Workstation Slurm & GPU job dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-12 text-center text-xs text-slate-500 font-mono">
+    ShivanshOS Universal Identity System &copy; 2026. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Chatbot Interactive Behavior
+    const chatbotTrigger = document.getElementById('chatbot-trigger');
+    const chatbotBox = document.getElementById('chatbot-box');
+    const sendBtn = document.getElementById('send-btn');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatbotTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      chatbotBox.classList.toggle('hidden');
+    });
+
+    const handleSend = () => {
+      const text = chatInput.value.trim();
+      if (!text) return;
+
+      const userDiv = document.createElement('div');
+      userDiv.className = 'text-slate-300';
+      userDiv.innerHTML = `<span class="font-bold text-teal-400">[You]:</span> ${text}`;
+      chatMessages.appendChild(userDiv);
+
+      chatInput.value = '';
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      setTimeout(() => {
+        const agentDiv = document.createElement('div');
+        agentDiv.className = 'text-purple-400';
+        agentDiv.innerHTML = `<span class="font-bold">[Agent]:</span> I received: "${text}". ShivanshOS is currently executing autonomous workflow agents on ${window.location.hostname}.`;
+        chatMessages.appendChild(agentDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 600);
+    };
+
+    sendBtn.addEventListener('click', handleSend);
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleSend();
+    });
+  </script>
+</body>
+</html>
