@@ -1,0 +1,39 @@
+# ShivanshOS System Knowledge Base Index
+version: "1.1"
+domain: "shivanshsethi.in"
+
+identities:
+  - "x@shivanshsethi.in (Admin / Master Control)"
+  - "dev@shivanshsethi.in (Developer Persona / Auth0 Tenant Owner)"
+  - "me@shivanshsethi.in (Service & Public Identity)"
+  - "agent@shivanshsethi.in (Autonomous Agent Persona)"
+
+compute_infrastructure:
+  - node: "HPC Ubuntu Workstation"
+    role: "Main Compute & GPU Workloads"
+    subdomain: "hpc.shivanshsethi.in"
+  - node: "kvm2 VPS"
+    role: "Self-hosted Docker services (Gitea, Vaultwarden, Authentik, Cheshire Cat, Uptime Kuma)"
+  - node: "Spectre Laptop"
+    role: "Access Plane"
+  - node: "iPhone"
+    role: "WARP-enrolled Endpoint"
+
+subdomains_and_services:
+  - subdomain: "os.shivanshsethi.in"
+    description: "Main Landing Portal, Hybrid Studio, Case-Study Research, Blog/Substack Feed, Link-Tree, and Agent Dashboard"
+    modules:
+      - "os/index.html (Resource Integrator, Link-Tree, Agent Dashboard, Badge Showcase)"
+      - "os/studio.html (Studio Project Showcase & Active Products)"
+      - "os/research.html (Research Papers & Technical Case Studies)"
+      - "os/blog.html (Personal Blog, Substack Feed & Medium Mirrors)"
+  - subdomain: "git.shivanshsethi.in"
+    description: "Gitea Self-Hosted Git Repository"
+  - subdomain: "vault.shivanshsethi.in"
+    description: "Vaultwarden Password & Token Secrets Vault"
+  - subdomain: "auth.shivanshsethi.in"
+    description: "Authentik Human SSO Endpoint"
+  - subdomain: "docs.shivanshsethi.in"
+    description: "Mintlify Architecture Documentation"
+  - subdomain: "cat.shivanshsethi.in"
+    description: "Cheshire Cat AI Framework / MCP Web UI"

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShivanshOS — Studio & Project Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; background-color: #090d16; color: #e2e8f0; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 sm:p-8">
+
+  <!-- Header -->
+  <header class="w-full max-w-5xl border-b border-slate-800 pb-6 mb-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <a href="index.html" class="inline-flex items-center gap-2 font-mono text-xl sm:text-2xl font-bold tracking-wider hover:opacity-90 transition">
+          <span class="text-white">SHIVANSH</span><span class="text-teal-400">OS</span>
+        </a>
+        <div class="font-mono text-xs text-slate-400 mt-0.5 tracking-widest uppercase">
+          / studio & projects
+        </div>
+      </div>
+      <nav class="flex items-center gap-1 font-mono text-xs bg-slate-900/90 p-1.5 border border-slate-800 rounded-xl">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">Home/Portal</a>
+        <a href="studio.html" class="px-3 py-1.5 rounded-lg bg-teal-500/20 text-teal-300 font-semibold border border-teal-500/30">Studio</a>
+        <a href="research.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">Research & Case Studies</a>
+        <a href="blog.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">Blog/Substack</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="w-full max-w-5xl space-y-8">
+    <section class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 shadow-xl">
+      <h1 class="text-2xl font-bold text-white mb-2">ShivanshOS Studio</h1>
+      <p class="text-slate-400 text-sm">A collection of active projects, AI agent tools, and enterprise platform products built across Aiotize, Aio3, and personal lab systems.</p>
+    </section>
+
+    <!-- Project Studio Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono text-teal-400 bg-teal-500/10 px-2.5 py-1 rounded border border-teal-500/20">Active Studio Project</span>
+          <span class="text-xs text-slate-500 font-mono">v1.0.0</span>
+        </div>
+        <h2 class="text-lg font-bold text-white">ShivanshOS Canonical Identity</h2>
+        <p class="text-slate-400 text-xs">Universal identity wrapper combining Cloud Identity, Auth0 Dev platform, and Cloudflare Email Routing under shivanshsethi.in.</p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Auth0</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Cloudflare</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Vaultwarden</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded border border-purple-500/20">Agentic MCP System</span>
+          <span class="text-xs text-slate-500 font-mono">v2.1.0</span>
+        </div>
+        <h2 class="text-lg font-bold text-white">Identity Manager MCP Agent</h2>
+        <p class="text-slate-400 text-xs">Autonomous MCP server automating directory sync, secret rotation, and zero-trust access audits.</p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">MCP Protocol</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">Node.js</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">TypeScript</span>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="mt-12 text-center text-xs text-slate-500 font-mono">
+    ShivanshOS Studio &copy; 2026.
+  </footer>
+</body>
+</html>

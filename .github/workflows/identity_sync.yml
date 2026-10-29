@@ -1,0 +1,50 @@
+name: ShivanshOS Identity & Workspace Sync Validation
+
+on:
+  push:
+    branches: [ main, master, "jules-*" ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-identity-and-ous:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml
+
+      - name: Validate Workspace OU & Identity YAML Schemas
+        run: |
+          python -c "
+          import yaml
+          with open('workspace/ous.yaml') as f:
+              ous = yaml.safe_load(f)
+              assert ous['domain'] == 'shivanshsethi.in'
+              print('Workspace OUs valid.')
+
+          with open('workspace/users.yaml') as f:
+              users = yaml.safe_load(f)
+              assert len(users['users']) >= 4
+              print('Workspace Users valid.')
+
+          with open('identity/cloudflare_email_routing.yaml') as f:
+              cf = yaml.safe_load(f)
+              assert cf['destination_address'] == 'shivanshsethi88@gmail.com'
+              print('Cloudflare Email Routing config valid.')
+          "
+
+      - name: Verify Portal Assets
+        run: |
+          test -f os/index.html
+          echo "Portal index.html verified."

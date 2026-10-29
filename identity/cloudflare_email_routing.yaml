@@ -1,0 +1,67 @@
+# Cloudflare Email Routing Configuration
+# Routing all shivanshsethi.in aliases to primary active gmail: shivanshsethi88@gmail.com
+
+version: "1.0"
+domain: "shivanshsethi.in"
+destination_address: "shivanshsethi88@gmail.com"
+
+rules:
+  - name: "Admin Alias"
+    match:
+      type: "literal"
+      field: "to"
+      value: "x@shivanshsethi.in"
+    action:
+      type: "forward"
+      value: ["shivanshsethi88@gmail.com"]
+    status: "enabled"
+
+  - name: "Developer Persona Alias"
+    match:
+      type: "literal"
+      field: "to"
+      value: "dev@shivanshsethi.in"
+    action:
+      type: "forward"
+      value: ["shivanshsethi88@gmail.com"]
+    status: "enabled"
+
+  - name: "Primary Service & Public Portal Alias"
+    match:
+      type: "literal"
+      field: "to"
+      value: "me@shivanshsethi.in"
+    action:
+      type: "forward"
+      value: ["shivanshsethi88@gmail.com"]
+    status: "enabled"
+
+  - name: "Agent & Automation Alias"
+    match:
+      type: "literal"
+      field: "to"
+      value: "agent@shivanshsethi.in"
+    action:
+      type: "forward"
+      value: ["shivanshsethi88@gmail.com"]
+    status: "enabled"
+
+  - name: "General Administration Alias"
+    match:
+      type: "literal"
+      field: "to"
+      value: "admin@shivanshsethi.in"
+    action:
+      type: "forward"
+      value: ["shivanshsethi88@gmail.com"]
+    status: "enabled"
+
+  - name: "Contact Hello Alias"
+    match:
+      type: "literal"
+      field: "to"
+      value: "hello@shivanshsethi.in"
+    action:
+      type: "forward"
+      value: ["shivanshsethi88@gmail.com"]
+    status: "enabled"
