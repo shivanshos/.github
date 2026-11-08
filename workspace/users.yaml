@@ -1,0 +1,40 @@
+# Google Workspace Canonical Users
+version: "1.0"
+domain: "shivanshsethi.in"
+
+users:
+  - primary_email: "x@shivanshsethi.in"
+    name:
+      given_name: "Shivansh"
+      family_name: "Sethi (Admin)"
+    ou_path: "/Admin"
+    role: "Primary Service & Admin Account"
+    description: "Master administrative and zero-trust policy control persona"
+    is_admin: true
+
+  - primary_email: "dev@shivanshsethi.in"
+    name:
+      given_name: "Shivansh"
+      family_name: "Sethi (Dev)"
+    ou_path: "/Developer"
+    role: "Developer Persona"
+    description: "Engineering, GitHub/Gitea owner, Auth0 Dev platform administrator"
+    is_admin: false
+
+  - primary_email: "me@shivanshsethi.in"
+    name:
+      given_name: "Shivansh"
+      family_name: "Sethi (Public/Service)"
+    ou_path: "/Service"
+    role: "Public & Service Gateway Account"
+    description: "Personal portal, contact, and public identity gateway"
+    is_admin: false
+
+  - primary_email: "agent@shivanshsethi.in"
+    name:
+      given_name: "ShivanshOS"
+      family_name: "Agent"
+    ou_path: "/Agents"
+    role: "Autonomous Agent Persona"
+    description: "System agent for MCP workflows, secret rotations, and directory sync"
+    is_admin: false

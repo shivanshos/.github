@@ -1,0 +1,39 @@
+# Vaultwarden & Token Vault Configuration Policy
+# Host: vault.shivanshsethi.in
+version: "1.0"
+service_url: "https://vault.shivanshsethi.in"
+
+organization: "ShivanshOS System"
+
+vault_collections:
+  - name: "Admin Credentials & Passkeys"
+    description: "Master administrative accounts and emergency access keys"
+    access_ou: "/Admin"
+    allowed_identities:
+      - "x@shivanshsethi.in"
+
+  - name: "Developer API Keys & Tokens"
+    description: "Cloudflare, Auth0, GitHub, OpenAI, and cloud platform tokens"
+    access_ou: "/Developer"
+    allowed_identities:
+      - "dev@shivanshsethi.in"
+
+  - name: "Agent Service Tokens"
+    description: "OAuth2 client secrets and MCP agent access tokens"
+    access_ou: "/Agents"
+    allowed_identities:
+      - "agent@shivanshsethi.in"
+      - "dev@shivanshsethi.in"
+
+passkey_and_mfa_policy:
+  enforce_webauthn: true
+  allow_passkeys: true
+  passkey_origins:
+    - "https://vault.shivanshsethi.in"
+    - "https://login.shivanshsethi.in"
+    - "https://auth.shivanshsethi.in"
+
+agent_token_vault:
+  token_ttl_seconds: 3600
+  auto_rotation_enabled: true
+  rotation_agent: "agent@shivanshsethi.in"

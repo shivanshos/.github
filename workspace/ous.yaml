@@ -1,0 +1,38 @@
+# Google Workspace / Cloud Identity Free Organizational Unit Structure
+version: "1.0"
+domain: "shivanshsethi.in"
+
+organization_units:
+  - path: "/"
+    name: "ShivanshOS Root"
+    description: "Root Organization for shivanshsethi.in universal identity ecosystem"
+
+  - path: "/Admin"
+    name: "Administrator & Executive"
+    description: "Primary administrative persona and service governance"
+    parent: "/"
+    access_level: "Super Admin"
+
+  - path: "/Developer"
+    name: "Developer Persona"
+    description: "Development, engineering, and technical operations persona"
+    parent: "/"
+    access_level: "Developer Admin"
+
+  - path: "/Service"
+    name: "Primary Service & Portal"
+    description: "Public-facing service, portal management, and identity endpoints"
+    parent: "/"
+    access_level: "Service Account Manager"
+
+  - path: "/Agents"
+    name: "Autonomous Agents & Automation"
+    description: "Bot, AI agents, MCP agents, and background service tokens"
+    parent: "/"
+    access_level: "Restricted Agent Service"
+
+  - path: "/External"
+    name: "External Federated Identities"
+    description: "Mapped identities from external domains (aiotize, aio3, personal)"
+    parent: "/"
+    access_level: "Federated Guest / Linked Account"

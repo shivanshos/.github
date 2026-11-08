@@ -1,0 +1,43 @@
+# Directory Synchronization & External Account Mappings
+version: "1.0"
+primary_canonical_identity: "shivanshsethi.in"
+
+external_accounts:
+  - email: "shivanshsethi88@gmail.com"
+    provider: "Google"
+    role: "Active Mailbox / Root Target & Perplexity Pro Target"
+    mapped_ou: "/Admin"
+    sync_status: "active_primary_inbox"
+
+  - email: "shivansh.sethi@outlook.in"
+    provider: "Microsoft"
+    role: "Anchor Account / Legacy Identity"
+    mapped_ou: "/External"
+    sync_status: "linked_forwarded"
+
+  - email: "shivansh.sethi@icloud.com"
+    provider: "Apple"
+    role: "Apple Ecosystem & WARP Endpoint Identity"
+    mapped_ou: "/External"
+    sync_status: "linked_forwarded"
+
+  - domain: "aiotize.com"
+    accounts:
+      - "shivansh@aiotize.com"
+    provider: "Google Workspace (Aiotize Org)"
+    mapped_ou: "/External"
+    sync_status: "federated_sso"
+
+  - domain: "aio3.ai"
+    accounts:
+      - "shivansh@aio3.ai"
+    provider: "Google Workspace (Aio3 Org)"
+    mapped_ou: "/External"
+    sync_status: "federated_sso"
+
+directory_sync_rules:
+  - source_ou: "/External"
+    target_sso: "Auth0 Dev Platform"
+    saml_mapping: "external_identity_provider"
+    sync_interval: "hourly"
+    auto_provision: true

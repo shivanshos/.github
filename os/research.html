@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShivanshOS — Research & Case Studies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; background-color: #090d16; color: #e2e8f0; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-4 sm:p-8">
+
+  <!-- Header -->
+  <header class="w-full max-w-5xl border-b border-slate-800 pb-6 mb-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <a href="index.html" class="inline-flex items-center gap-2 font-mono text-xl sm:text-2xl font-bold tracking-wider hover:opacity-90 transition">
+          <span class="text-white">SHIVANSH</span><span class="text-teal-400">OS</span>
+        </a>
+        <div class="font-mono text-xs text-slate-400 mt-0.5 tracking-widest uppercase">
+          / research & case studies
+        </div>
+      </div>
+      <nav class="flex items-center gap-1 font-mono text-xs bg-slate-900/90 p-1.5 border border-slate-800 rounded-xl">
+        <a href="index.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">Home/Portal</a>
+        <a href="studio.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">Studio</a>
+        <a href="research.html" class="px-3 py-1.5 rounded-lg bg-blue-500/20 text-blue-300 font-semibold border border-blue-500/30">Research & Case Studies</a>
+        <a href="blog.html" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition">Blog/Substack</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="w-full max-w-5xl space-y-8">
+    <section class="bg-slate-900/80 border border-slate-800 rounded-xl p-6 shadow-xl">
+      <h1 class="text-2xl font-bold text-white mb-2">Research & Technical Case Studies</h1>
+      <p class="text-slate-400 text-sm">In-depth technical papers on autonomous AI agents, Zero Trust network architectures, and multi-cloud identity federation.</p>
+    </section>
+
+    <div class="space-y-4">
+
+      <article class="p-6 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+        <div class="flex items-center gap-2 text-xs font-mono text-blue-400">
+          <span>CASE STUDY #01</span> &bull; <span>JULY 2026</span>
+        </div>
+        <h2 class="text-lg font-bold text-white">Zero Trust Subdomain Isolation & Cloudflare Tunnels</h2>
+        <p class="text-slate-400 text-xs">Analyzing security isolation across 30+ subdomains under shivanshsethi.in using dual-tunnel architecture and WARP endpoints.</p>
+      </article>
+
+      <article class="p-6 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+        <div class="flex items-center gap-2 text-xs font-mono text-blue-400">
+          <span>RESEARCH PAPER #02</span> &bull; <span>JUNE 2026</span>
+        </div>
+        <h2 class="text-lg font-bold text-white">Model Context Protocol (MCP) in Multi-Tenant Agent Orchestration</h2>
+        <p class="text-slate-400 text-xs">Design patterns for integrating MCP tools with Vaultwarden token vaults and Auth0 SAML enterprise connections.</p>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="mt-12 text-center text-xs text-slate-500 font-mono">
+    ShivanshOS Research &copy; 2026.
+  </footer>
+</body>
+</html>

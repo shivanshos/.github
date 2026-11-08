@@ -1,0 +1,93 @@
+# Cloudflare DNS & Tunnel Subdomain Configuration
+version: "1.0"
+zone_name: "shivanshsethi.in"
+
+dns_records:
+  # Root Apex Domain
+  - name: "shivanshsethi.in"
+    type: "A"
+    content: "194.118.18.129"
+    proxied: true
+    comment: "Root apex domain origin"
+
+  # Cloudflare Tunnel 1 (93b227dc-...) Services
+  - name: "os"
+    type: "CNAME"
+    content: "93b227dc-tunnel.cfargotunnel.com"
+    proxied: true
+    comment: "ShivanshOS Portal & Portfolio Landing Page"
+
+  - name: "login"
+    type: "CNAME"
+    content: "93b227dc-tunnel.cfargotunnel.com"
+    proxied: true
+    comment: "Central SSO / Auth Gateway"
+
+  - name: "dev"
+    type: "CNAME"
+    content: "93b227dc-tunnel.cfargotunnel.com"
+    proxied: true
+    comment: "Developer Portal & Sandboxes"
+
+  - name: "hpc"
+    type: "CNAME"
+    content: "93b227dc-tunnel.cfargotunnel.com"
+    proxied: true
+    comment: "Ubuntu HPC Workstation Portal"
+
+  - name: "app"
+    type: "CNAME"
+    content: "93b227dc-tunnel.cfargotunnel.com"
+    proxied: true
+    comment: "App Gateway"
+
+  - name: "agent"
+    type: "CNAME"
+    content: "93b227dc-tunnel.cfargotunnel.com"
+    proxied: true
+    comment: "Agent Orchestration & MCP Gateway"
+
+  # Cloudflare Tunnel 2 (a896624d-...) Services
+  - name: "ollama-internal"
+    type: "CNAME"
+    content: "a896624d-tunnel.cfargotunnel.com"
+    proxied: true
+    comment: "Internal LLM Engine"
+
+  # Proxied A-record Services (Direct to kvm2 VPS 194.164.149.18)
+  - name: "git"
+    type: "A"
+    content: "194.164.149.18"
+    proxied: true
+    comment: "Gitea Code Host"
+
+  - name: "vault"
+    type: "A"
+    content: "194.164.149.18"
+    proxied: true
+    comment: "Vaultwarden Passkeys & Secrets Vault"
+
+  - name: "auth"
+    type: "A"
+    content: "194.164.149.18"
+    proxied: true
+    comment: "Authentik Human SSO"
+
+  - name: "cat"
+    type: "A"
+    content: "194.164.149.18"
+    proxied: true
+    comment: "Cheshire Cat AI Framework / Web UI"
+
+  - name: "status"
+    type: "A"
+    content: "194.164.149.18"
+    proxied: true
+    comment: "Uptime Kuma Monitoring"
+
+  # External Services
+  - name: "docs"
+    type: "CNAME"
+    content: "mintlify.com"
+    proxied: false
+    comment: "Mintlify Documentation Host"

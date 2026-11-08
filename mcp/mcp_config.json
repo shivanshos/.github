@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "shivansh-identity-manager": {
+      "command": "node",
+      "args": ["mcp/identity_server.js"],
+      "env": {
+        "SHIVANSHOS_DOMAIN": "shivanshsethi.in",
+        "AUTH0_TENANT": "shivanshos-dev.auth0.com",
+        "VAULT_URL": "https://vault.shivanshsethi.in"
+      },
+      "tools": [
+        {
+          "name": "lookup_user_identity",
+          "description": "Look up canonical user identity and OU path for shivanshsethi.in or linked external accounts"
+        },
+        {
+          "name": "verify_email_routing",
+          "description": "Verify Cloudflare Email Routing alias forwards to active inbox shivanshsethi88@gmail.com"
+        },
+        {
+          "name": "check_vault_permission",
+          "description": "Validate token or passkey access against Vaultwarden policy for identity persona"
+        }
+      ]
+    }
+  }
+}
